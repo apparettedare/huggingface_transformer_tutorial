@@ -1,4 +1,5 @@
-from transformers import AutoModel
+from transformers import BertModel
 
 checkpoint = 'cl-tohoku/bert-base-japanese-whole-word-masking'
-model = AutoModel.from_pretrained(checkpoint)
+model = BertModel.from_pretrained(checkpoint)
+model.save_pretrained("./tmp")

@@ -1,9 +1,11 @@
 from transformers import BertJapaneseTokenizer, AutoModelForMaskedLM
 import torch
 
-tokenizer = BertJapaneseTokenizer.from_pretrained('cl-tohoku/bert-base-japanese-whole-word-masking')
+# tokenizer = BertJapaneseTokenizer.from_pretrained('cl-tohoku/bert-base-japanese-whole-word-masking')
 model = AutoModelForMaskedLM.from_pretrained('cl-tohoku/bert-base-japanese-whole-word-masking')
-
+tokenizer = BertJapaneseTokenizer.from_pretrained(
+    'cl-tohoku/bert-base-japanese-whole-word-masking', force_download=True
+)
 # マスク付きテキスト
 text = f'自然言語処理を習得するには、まずは{tokenizer.mask_token}から学習することである。'
 
